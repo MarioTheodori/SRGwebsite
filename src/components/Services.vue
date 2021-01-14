@@ -1,6 +1,6 @@
 <template>
     <div class="mainCont my-4">
-        <div class="my-5"><span class="title text-h4">SERVICES</span></div>
+        <div class="my-5"><span class="title">SERVICES</span></div>
         <div class="containers ma-0">
             <div class="cards">
                 <v-card class="smallcard" elevation="3"><v-card-text class="font fix1">Customized Software Development</v-card-text>
@@ -49,7 +49,7 @@
                 </v-card>
             </div>
             <div class="backgroundimg">
-                <v-img src="../assets/servicesback.png"></v-img>
+                <v-img src="../assets/servicesback.png" class="hide"></v-img>
             </div>
         </div>
     </div>
@@ -74,17 +74,6 @@ export default {
     margin: 0%;
     max-height: 550px;
 }
-.title{
-    font-family: PetitaMedium !important;
-    white-space: nowrap;
-    text-align: left;
-    font-style: normal;
-    font-size: 2.5vw !important;
-}
-.font{
-    text-align: center;
-    font-size: 1.3vw;
-}
 
 .center {
     align-self: center !important;
@@ -96,19 +85,35 @@ export default {
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
 
 }
-.cards{
+
+@media only screen and (max-width: 45em) {
+    .hide{
+        display: none;
+    }
+    .cards{
     grid-column: 2 / span 1;
-    grid-row: 1 / 6;
+    grid-row: 1 / 9;
     display: flex;
     height: fit-content;
+    flex-wrap: wrap;
     justify-content:center;
-    width: 85%;
+    width: 100%;
     z-index: 2;
     gap: 2%;
     justify-self: center;
     }
-
-@media only screen and (max-width: 40em) {
+    .title{
+    font-family: PetitaMedium !important;
+    white-space: nowrap;
+    text-align: left;
+    font-style: normal;
+    font-size: 5vw !important;
+    }
+    .font{
+        text-align: center;
+        font-size: 2.5vw;
+        white-space:normal;
+    }
     .fix1{
         padding-right: 0px;
         padding-left: 0px;
@@ -117,12 +122,15 @@ export default {
     .backgroundimg{
     grid-row: 1 / -1;
     grid-column: 1 / -1;
+    background-image: url("../assets/servicesback.png");
+    background-size: cover;
     }
     .smallcard{
     margin-top: 10px;
     background-color: rgba(246,246,246,1) !important;
-    height: 25vw;
-    width: 30vw;
+    min-height: fit-content;
+    height: 35vw;
+    width: 23vw;
     border-radius: 0% !important;
     display: flex;
     flex-direction: column;
@@ -130,20 +138,45 @@ export default {
 }
 
 }
-@media only screen and (min-width: 40em) { 
+@media only screen and (min-width: 45em) { 
+    .cards{
+    grid-column: 2 / span 1;
+    grid-row: 1 / 8;
+    display: flex;
+    height: fit-content;
+    flex-wrap: wrap;
+    justify-content:center;
+    width: 100%;
+    z-index: 2;
+    gap: 2%;
+    justify-self: center;
+    }
     .backgroundimg{
     grid-row: 2 / 11;
     grid-column: 2 / span 1;
     }
     .smallcard{
     background-color: rgba(246,246,246,1) !important;
+    min-height: fit-content;
     height: 20vw;
-    width: 30vw;
+    width: 15vw;
     border-radius: 0% !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
-}
+    }
+    .title{
+    font-family: PetitaMedium !important;
+    white-space: nowrap;
+    text-align: left;
+    font-style: normal;
+    font-size: 2.5vw !important;
+    }
+    .font{
+        text-align: center;
+        font-size: 1.5vw;
+        line-height: 1;
+    }
 }
 </style>

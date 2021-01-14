@@ -89,6 +89,7 @@ export default {
     align-content: center;
     min-width: fit-content;
     min-height: fit-content;
+    gap: 5%;
     height: 25vw;
     width: 22vw;
     border-radius: 0%;
@@ -97,19 +98,9 @@ export default {
     position: relative;
     bottom: 60px;
 }
-.title{
-    font-family: PetitaBold !important;
-    font-weight: 520 !important;
-    font-size: 2.5vw !important;
-    justify-content: center;
-}
+
 .img{
     padding-top: 20px;
-}
-span{
-    font-family: PetitaMedium;
-    color: white !important;
-    font-size: 1.2vw;
 }
 img{
     height: 25px;
@@ -118,5 +109,34 @@ img{
 .right{
     display: flex;
     flex-direction: row-reverse;
+}
+@media only screen and (max-width: 45em) {
+    .title{
+        font-family: PetitaBold !important;
+        font-weight: 520 !important;
+        font-size: 5vw !important;
+        justify-content: center;
+    }
+    span{
+    font-family: PetitaMedium;
+    color: white !important;
+    font-size: 2.5vw;
+    }
+    .smallcard{
+        display: none;
+    }
+}
+@media only screen and (min-width: 45em) {
+    .title{
+    font-family: PetitaBold !important;
+    font-weight: 520 !important;
+    font-size: 2.5vw !important;
+    justify-content: center;
+    }
+    span{
+    font-family: PetitaMedium;
+    color: white !important;
+    font-size: 1.2vw;
+    }
 }
 </style>

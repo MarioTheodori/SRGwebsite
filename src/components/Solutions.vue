@@ -1,10 +1,10 @@
 <template>
-    <div class="mainCont my-4">
-        <div class="my-5"><span class="title text-h4">SOLUTIONS</span></div>
-        <div class="containers ma-0 my-8">
-            <span class="font2">CMS Development</span>
-            <span class="font2">BI Solution</span>
-            <span class="font2">Mobile Applications</span>
+    <div class="mainCont">
+        <div class="my-3"><span class="title">SOLUTIONS</span></div>
+        <div class="containers ma-0">
+            <span class="fonttitle">CMS Development</span>
+            <span class="fonttitle">BI Solution</span>
+            <span class="fonttitle">Mobile Applications</span>
         </div>
         <div class="my-4 grid-container">
             <div class="cards">
@@ -51,28 +51,12 @@ export default {
     align-items: center;
     margin: 0%;
 }
-.title{
-    font-family: PetitaMedium !important;
-    white-space: nowrap;
-    text-align: left;
-    font-style: normal;
-    font-size: 2.5vw !important;
-}
 .containers{
     width: 100% !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-.cards{
-    grid-column: 2 / 3;
-    grid-row: 3 / 10;
-    display: flex;
-    justify-content:center;
-    align-content: center;
-    gap: 4%;
-    z-index: 2;
 }
 .padfix{
     padding-left: 42px;
@@ -84,12 +68,23 @@ export default {
     grid-template-columns: 10% 80% 10%;
     grid-template-rows: 20px repeat(10, 1fr) 1px;
 }
-.font2{
-    text-align: center;
-    font-size: 1.5vw;
-    font-family: PetitaBold !important;
+@media only screen and (min-width: 45em) { 
+    .cards{
+    grid-column: 2 / 3;
+    grid-row: 3 / 10;
+    display: flex;
+    justify-content:center;
+    align-content: center;
+    gap: 4%;
+    z-index: 2;
 }
-@media only screen and (min-width: 40em) { 
+    .title{
+    font-family: PetitaMedium !important;
+    white-space: nowrap;
+    text-align: left;
+    font-style: normal;
+    font-size: 2.5vw !important;
+}
     .backgroundimg{
     grid-row: 2 / -1;
     grid-column: 2 / 3;
@@ -117,7 +112,23 @@ export default {
     white-space: normal;
 }
 }
-@media only screen and (max-width: 40em) { 
+@media only screen and (max-width: 45em) {
+    .cards{
+    grid-column: 2 / 3;
+    grid-row: 2 / 10;
+    display: flex;
+    justify-content:center;
+    align-content: center;
+    gap: 4%;
+    z-index: 2;
+}
+    .title{
+    font-family: PetitaMedium !important;
+    white-space: nowrap;
+    text-align: left;
+    font-style: normal;
+    font-size: 5vw !important;
+} 
     .backgroundimg{
     grid-row: 1 / -1;
     grid-column: 1 / -1;
@@ -125,8 +136,8 @@ export default {
     .smallcard{
     height: fit-content;
     background-color: rgba(246,246,246,1) !important;
-    width: 20vw;
-    max-height: 70vh;
+    width: 25vw;
+    max-height: 75vw;
     border-radius: 0% !important;
     display: flex;
     flex-direction: column;
@@ -135,7 +146,7 @@ export default {
     }
     .fonttitle{
         text-align: center;
-        font-size: 1.5vw;
+        font-size: 2.5vw;
         font-family: PetitaBold !important;
         padding: 0;
         padding-top:2px;
@@ -144,7 +155,7 @@ export default {
     }
     .font{
         text-align: left;
-        font-size: 1.3vw;
+        font-size: 1.8vw;
         font-family: PetitaLight !important;
         white-space:normal;
     }
