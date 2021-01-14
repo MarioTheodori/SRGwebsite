@@ -2,9 +2,9 @@
     <div class="mainCont my-4">
         <div class="my-5"><span class="title text-h4">SOLUTIONS</span></div>
         <div class="containers ma-0 my-8">
-            <span>CMS Development</span>
-            <span>BI Solution</span>
-            <span>Mobile Applications</span>
+            <span class="font2">CMS Development</span>
+            <span class="font2">BI Solution</span>
+            <span class="font2">Mobile Applications</span>
         </div>
         <div class="my-4 grid-container">
             <div class="cards">
@@ -22,8 +22,8 @@
                 </v-card>
                 <v-card class="smallcard" elevation="3">
                     <v-card-text class="fonttitle px-1">PROGRAMMING LANGUAGES & FRAMEWORKS</v-card-text>
-                    <div class="ma-0 pa-0 pb-4 px-10">
-                        <span class="font">Microsoft .Net, ASP.Net<br>ASP Classic, C#<br>Java, Visual BASIC<br>PHP,C,C++,elixir<br>Xamarin, Laravel, Dot<br>Net Core<br>Sharepoint, Ms<br>Dynamics CRM, HTML5, AngularJS<br>CSS3, JavaScript<br>jQuery<br>PhoneGap, Bootstrap<br>Node,js</span>
+                    <div class="ma-0 pa-0 pb-4">
+                        <span class="font">Microsoft, .Net,<br> ASP.Net, ASP Classic,<br> C#, Java,<br> Visual BASIC, PHP,<br> C, C++,<br> elixir, Xamarin,<br> Laravel, Dot,<br> Net Core, Sharepoint,<br> Ms, Dynamics CRM,<br> HTML5, AngularJS,<br> CSS3, JavaScript,<br> jQuery, PhoneGap,<br> Bootstrap, Nodejs</span>
                     </div>
                 </v-card>
             </div>
@@ -56,7 +56,7 @@ export default {
     white-space: nowrap;
     text-align: left;
     font-style: normal;
-    font-size: 25px !important;
+    font-size: 2.5vw !important;
 }
 .containers{
     width: 100% !important;
@@ -74,40 +74,80 @@ export default {
     gap: 4%;
     z-index: 2;
 }
-.smallcard{
+.padfix{
+    padding-left: 42px;
+    padding-right: 41px;
+}
+.grid-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+    grid-template-rows: 20px repeat(10, 1fr) 1px;
+}
+.font2{
+    text-align: center;
+    font-size: 1.5vw;
+    font-family: PetitaBold !important;
+}
+@media only screen and (min-width: 40em) { 
+    .backgroundimg{
+    grid-row: 2 / -1;
+    grid-column: 2 / 3;
+}
+    .smallcard{
     height: fit-content;
     background-color: rgba(246,246,246,1) !important;
-    width: fit-content;
-    min-width: 240px;
-    max-width: 250px;
+    width: 23vw;
+    max-height: 60vw;
     border-radius: 0% !important;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-.fonttitle,span{
+.fonttitle{
     text-align: center;
-    font-size: 16px;
+    font-size: 1.5vw;
     font-family: PetitaBold !important;
 }
 .font{
     text-align: left;
-    font-size: 15px;
+    font-size: 1.3vw;
     font-family: PetitaLight !important;
+    white-space: normal;
 }
-.padfix{
-    padding-left: 42px;
-    padding-right: 41px;
 }
-.grid-container{
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-    grid-template-rows: 20px repeat(10, 1fr) 1px;
-}
-.backgroundimg{
-    grid-row: 2 / -1;
-    grid-column: 2 / 3;
+@media only screen and (max-width: 40em) { 
+    .backgroundimg{
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    }
+    .smallcard{
+    height: fit-content;
+    background-color: rgba(246,246,246,1) !important;
+    width: 20vw;
+    max-height: 70vh;
+    border-radius: 0% !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow:auto;
+    }
+    .fonttitle{
+        text-align: center;
+        font-size: 1.5vw;
+        font-family: PetitaBold !important;
+        padding: 0;
+        padding-top:2px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .font{
+        text-align: left;
+        font-size: 1.3vw;
+        font-family: PetitaLight !important;
+        white-space:normal;
+    }
 }
 </style>
 

@@ -41,8 +41,8 @@
                         </v-form>
                     </v-card>
                     <v-card class="smallcard" elevation="3">
-                        <v-card-title class="pt-1"><img src="../assets/gmail.png" class="pr-1"><span class="pl-1">mhdd.salem@gmail.com</span></v-card-title>
-                        <v-card-title class="pb-1"><img src="../assets/telephone.png" class="pr-1"><span class="pl-1">+49 123 45678</span></v-card-title>
+                        <v-card-title class="pa-0 pl-1"><img src="../assets/gmail.png" class="pr-1 fix2"><span class="pl-1">mhdd.salem@gmail.com</span></v-card-title>
+                        <v-card-title class="pa-0 pl-1"><img src="../assets/telephone.png" class="pr-1 fix2"><span class="pl-1">+49 123 45678</span></v-card-title>
                     </v-card>
                 </div>
             </v-img>
@@ -58,6 +58,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+*{
+    font-family: Petitamedium !important;
+}
+.fix2{
+    height: 2vw;
+    width: 2.5vw;
+}
 .containers{
     height: 100%;
     width: 100%;
@@ -77,10 +84,13 @@ export default {
     background-color: rgba(239,239,239,1) !important;
 }
 .smallcard {
-    display: flex;
-    flex-direction: column-reverse;
-    height: 50%;
-    width: 17%;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-width: fit-content;
+    min-height: fit-content;
+    height: 25vw;
+    width: 22vw;
     border-radius: 0%;
     background-color:rgba(220,0,45,1);
     align-self: center;
@@ -90,7 +100,7 @@ export default {
 .title{
     font-family: PetitaBold !important;
     font-weight: 520 !important;
-    font-size: 30px !important;
+    font-size: 2.5vw !important;
     justify-content: center;
 }
 .img{
@@ -99,7 +109,7 @@ export default {
 span{
     font-family: PetitaMedium;
     color: white !important;
-    font-size: 15px;
+    font-size: 1.2vw;
 }
 img{
     height: 25px;

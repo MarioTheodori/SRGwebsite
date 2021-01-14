@@ -2,7 +2,6 @@
 <div>
   <v-app>
     <div class="appContainer">
-      <Header/>
       <Aboutus/>
       <Services/>
       <Solutions/>
@@ -13,7 +12,6 @@
 </template>
 
 <script>
-import Header from './components/Header.vue';
 import Aboutus from './components/Aboutus.vue';
 import Services from './components/Services.vue';
 import Solutions from './components/Solutions.vue';
@@ -23,7 +21,6 @@ export default {
   name: 'App',
 
   components: {
-    Header,
     Aboutus,
     Services,
     Solutions,

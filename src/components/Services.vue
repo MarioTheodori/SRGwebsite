@@ -3,7 +3,7 @@
         <div class="my-5"><span class="title text-h4">SERVICES</span></div>
         <div class="containers ma-0">
             <div class="cards">
-                <v-card class="smallcard" elevation="3"><v-card-text class="font">Customized Software Development</v-card-text>
+                <v-card class="smallcard" elevation="3"><v-card-text class="font fix1">Customized Software Development</v-card-text>
                     <v-img
                         class="ma-0 pa-0 center"
                         height="40"
@@ -79,46 +79,71 @@ export default {
     white-space: nowrap;
     text-align: left;
     font-style: normal;
-    font-size: 25px !important;
-}
-.smallcard{
-    
-    background-color: rgba(246,246,246,1) !important;
-    height: 200px;
-    width: 200px;
-    border-radius: 0% !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    
+    font-size: 2.5vw !important;
 }
 .font{
     text-align: center;
-    font-size: 17px;
+    font-size: 1.3vw;
 }
-.cards{
-    grid-column: 2 / span 1;
-    grid-row: 1 / 6;
-    display: flex;
-    justify-content:center;
-    width: 85%;
-    z-index: 2;
-    gap: 2%;
-    justify-self: center;
-}
+
 .center {
     align-self: center !important;
 }
 .containers{
     width: 100% !important;
     display: grid;
-    grid-template-columns: 15% 70% 15%;
+    grid-template-columns: 10% 80% 10%;
     grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
 
 }
-.backgroundimg{
+.cards{
+    grid-column: 2 / span 1;
+    grid-row: 1 / 6;
+    display: flex;
+    height: fit-content;
+    justify-content:center;
+    width: 85%;
+    z-index: 2;
+    gap: 2%;
+    justify-self: center;
+    }
+
+@media only screen and (max-width: 40em) {
+    .fix1{
+        padding-right: 0px;
+        padding-left: 0px;
+        line-height: 1.4;
+    }
+    .backgroundimg{
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+    }
+    .smallcard{
+    margin-top: 10px;
+    background-color: rgba(246,246,246,1) !important;
+    height: 25vw;
+    width: 30vw;
+    border-radius: 0% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+}
+@media only screen and (min-width: 40em) { 
+    .backgroundimg{
     grid-row: 2 / 11;
     grid-column: 2 / span 1;
+    }
+    .smallcard{
+    background-color: rgba(246,246,246,1) !important;
+    height: 20vw;
+    width: 30vw;
+    border-radius: 0% !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
 }
 </style>
