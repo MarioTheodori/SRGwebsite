@@ -11,7 +11,7 @@
             contain
         ></v-img>
         <v-spacer></v-spacer>
-        <v-app-bar-nav-icon class="d-sm-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+        <v-app-bar-nav-icon default class="d-sm-none" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
         <a class="mx-2 d-none d-sm-block" @click="$vuetify.goTo('#about')">About us</a>
         <a class="mx-2 d-none d-sm-block" @click="$vuetify.goTo('#service')">Services </a>
         <a class="mx-2 d-none d-sm-block" @click="$vuetify.goTo('#solution')">Solutions</a>
