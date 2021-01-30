@@ -6,12 +6,12 @@
                     <v-card class="vcard">
                         <div class="marg">
                             <v-card-text class="font">SRG Handel und Dienstleistung<br>
-                                                                    is an international software services organization,<br>
-                                                                    providing professional software services to clients globally.<br>
-                                                                    We serve customers worldwide offering different services<br>
-                                                                    and solutions with experience in the international market.<br>
-                                                                    We achieve your goals with our expertise in the<br>
-                                                                    field with high efficiency and the shortest time possible.
+                                                        is an international software services organization,<br>
+                                                        providing professional software services to clients globally.<br>
+                                                        We serve customers worldwide offering different services<br>
+                                                        and solutions with experience in the international market.<br>
+                                                        We achieve your goals with our expertise in the<br>
+                                                        field with high efficiency and the shortest time possible.
                             </v-card-text>
                         </div>
                     </v-card>
@@ -29,7 +29,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.font{
+@media only screen and (min-width: 45em) { 
+    .font{
     white-space: nowrap;
     text-align: left;
     font-family: PetitaBold !important;
@@ -37,8 +38,7 @@ export default {
     align-self: center;
     font-size: 1.5vw;
     line-height: 1.5;
-}
-@media only screen and (min-width: 40em) { 
+    }
     .cardcont{
     display: flex;
     flex-direction: row-reverse;
@@ -56,7 +56,6 @@ export default {
         background-color: rgba(239,239,239,1) !important;
         justify-items: center;
         align-items: center;
-        overflow: auto;
     }
     .cardcont{
     display: flex;
@@ -68,7 +67,16 @@ export default {
         padding: 3vw;
     }
 }
-@media only screen and (max-width: 40em) {
+@media only screen and (max-width: 45em) {
+    .font{
+    white-space: nowrap;
+    text-align: left;
+    font-family: PetitaBold !important;
+    color: black !important;
+    align-self: center;
+    font-size: 4vw;
+    line-height: 1;
+    }
     .cardcont{
     display: grid;
     height: 100%;
@@ -85,7 +93,7 @@ export default {
         align-items: center;
     }
     .marg{
-        padding: 1vw;
+        padding: 0vw;
     }
  }
 </style>

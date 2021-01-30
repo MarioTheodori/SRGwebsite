@@ -102,12 +102,12 @@ export default {
 }
 .fonttitle{
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.7vw;
     font-family: PetitaBold !important;
 }
 .font{
     text-align: left;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     font-family: PetitaLight !important;
     white-space: normal;
 }
@@ -136,8 +136,8 @@ export default {
     .smallcard{
     height: fit-content;
     background-color: rgba(246,246,246,1) !important;
-    width: 25vw;
-    max-height: 75vw;
+    width: 30vw;
+    max-height: 85vw;
     border-radius: 0% !important;
     display: flex;
     flex-direction: column;
@@ -146,8 +146,9 @@ export default {
     }
     .fonttitle{
         text-align: center;
-        font-size: 2.5vw;
+        font-size: 2.8vw;
         font-family: PetitaBold !important;
+        font-weight: 530;
         padding: 0;
         padding-top:2px;
         padding-left: 5px;
@@ -155,7 +156,7 @@ export default {
     }
     .font{
         text-align: left;
-        font-size: 1.8vw;
+        font-size: 2.4vw;
         font-family: PetitaLight !important;
         white-space:normal;
     }

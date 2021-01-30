@@ -111,7 +111,7 @@ export default {
     }
     .font{
         text-align: center;
-        font-size: 2.5vw;
+        font-size: 3vw;
         white-space:normal;
     }
     .fix1{

@@ -5,36 +5,40 @@
                 <div class="containers test">
                     <v-card class="maincard" elevation="5">
                         <v-card-title class="title">CONTACT US</v-card-title>
-                        <v-form ref="form" v-model="valid" class="pa-10">
+                        <v-form ref="form" @submit.prevent="sendEmail" class="pa-10">
                                 <v-text-field
-                                    v-model="name"
-                                    :counter="10"
-                                    :rules="nameRules"
+                                    name="user_name"
+                                    type="text"
                                     label="Name"
                                     required
                                     ></v-text-field>
                                     <v-text-field
-                                    v-model="email"
-                                    :rules="emailRules"
+                                    type="email"
+                                    name="user_email"
                                     label="E-mail"
                                     required
                                 ></v-text-field>
                                 <v-text-field
                                     label="Phone"
+                                    type="phone"
+                                    name="user_phone"
                                     required
                                 ></v-text-field>
                                 <v-text-field
                                     label="Subject"
+                                    name="subject"
+                                    type="text"
                                     required
                                 ></v-text-field>
                                 <v-textarea
                                     label="Message"
+                                    name="message"
                                     required
                                 ></v-textarea>
                                 <div class="right">
                                     <v-btn
                                     class="mr-4"
-                                    @click="submit"
+                                    type="submit"
                                     style="font-family: PetitaMedium;"
                                     >Submit</v-btn>
                                 </div>
@@ -51,8 +55,20 @@
 </template>
 
 <script>
+import emailjs from 'emailjs-com';
+
 export default {
   name: 'ContactUs',
+  methods: {
+    sendEmail: (e) => {
+      emailjs.sendForm('service_ajg291b', 'template_xet30e3', e.target, 'user_iADWPMUgkXv31zsO46tRb')
+        .then((result) => {
+            console.log('SUCCESS!', result.status, result.text);
+        }, (error) => {
+            console.log('FAILED...', error);
+        });
+    }
+  }
 }
 </script>
 
