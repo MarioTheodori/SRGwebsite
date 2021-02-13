@@ -52,12 +52,14 @@
             </v-list>
         </v-navigation-drawer>
     </v-app-bar>
+    <v-content>    
     <div class="appContainer">
       <Aboutus class="top" id="about"/>
       <Services id="service"/>
       <Solutions id="solution"/>
       <Contactus id="contact"/>
     </div>
+    </v-content>
   </v-app>
 </div>
 </template>
@@ -85,7 +87,9 @@ export default {
 </script>
 <style scoped>
 *{
-  font-family: PetitaMedium !important;
+  font-family: SpaceGrotesk !important;
+  src: local("SpaceGrotesk"),
+   url(./fonts/SpaceGrotesk[wght].ttf) format("truetype");
   font-size: 1.2rem;
   text-align: center;
   color: black !important;
@@ -93,15 +97,5 @@ export default {
 .appContainer{
   display: flex;
   flex-direction: column;
-}
-@media only screen and (max-width: 45em) {
-.top{
-  margin-top: 10%;
-}
-}
-@media only screen and (min-width: 45em) {
-  .top{
-    margin-top: 3%;
-  }
 }
 </style>

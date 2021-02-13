@@ -2,27 +2,27 @@
     <div class="mainCont">
         <div class="my-3"><span class="title">SOLUTIONS</span></div>
         <div class="containers ma-0">
-            <span class="fonttitle">CMS Development</span>
-            <span class="fonttitle">BI Solution</span>
-            <span class="fonttitle">Mobile Applications</span>
+            <span class="fonttitle2">CMS Development</span>
+            <span class="fonttitle2">BI Solution</span>
+            <span class="fonttitle2">Mobile Applications</span>
         </div>
         <div class="my-4 grid-container">
             <div class="cards">
                 <v-card class="smallcard" elevation="3">
-                    <v-card-text class="fonttitle">OPERATING SYSTEMS</v-card-text>
-                    <div class="ma-0 pa-0 pb-4">
-                        <span class="font">Microsoft Windows<br>Android<br>IOS, OS X<br>Linux, Unix</span>
+                    <v-card-text class="fonttitle left">OPERATING SYSTEMS</v-card-text>
+                    <div class="left">
+                        <span class="font ">Microsoft Windows<br>Android<br>IOS, OS X<br>Linux, Unix</span>
                     </div>
                 </v-card>
                 <v-card class="smallcard" elevation="3">
-                    <v-card-text class="fonttitle">DATABASE</v-card-text>
-                    <div class="ma-0 pa-0 pb-4">
-                        <span class="font">Microsoft SQL Server<br>MySQL<br>Oracle<br>IMB DB2<br>Cassandra<br>MongoDB<br>mySQL<br>PostGres<br>Postgresql</span>
+                    <v-card-text class="fonttitle right">DATABASE</v-card-text>
+                    <div class="right">
+                        <span class="font ">Microsoft SQL Server<br>MySQL<br>Oracle<br>IMB DB2<br>Cassandra<br>MongoDB<br>mySQL<br>PostGres<br>Postgresql</span>
                     </div>
                 </v-card>
                 <v-card class="smallcard" elevation="3">
-                    <v-card-text class="fonttitle px-1">PROGRAMMING LANGUAGES & FRAMEWORKS</v-card-text>
-                    <div class="ma-0 pa-0 pb-4">
+                    <v-card-text class="fonttitle left">PROGRAMMING LANGUAGES & FRAMEWORKS</v-card-text>
+                    <div class="left">
                         <span class="font">Microsoft, .Net,<br> ASP.Net, ASP Classic,<br> C#, Java,<br> Visual BASIC, PHP,<br> C, C++,<br> elixir, Xamarin,<br> Laravel, Dot,<br> Net Core, Sharepoint,<br> Ms, Dynamics CRM,<br> HTML5, AngularJS,<br> CSS3, JavaScript,<br> jQuery, PhoneGap,<br> Bootstrap, Nodejs</span>
                     </div>
                 </v-card>
@@ -75,11 +75,10 @@ export default {
     display: flex;
     justify-content:center;
     align-content: center;
-    gap: 4%;
     z-index: 2;
 }
     .title{
-    font-family: PetitaMedium !important;
+    font-family: SpaceGrotesk !important;
     white-space: nowrap;
     text-align: left;
     font-style: normal;
@@ -99,65 +98,77 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 3%;
 }
 .fonttitle{
     text-align: center;
     font-size: 1.7vw;
-    font-family: PetitaBold !important;
 }
 .font{
     text-align: left;
     font-size: 1.5vw;
-    font-family: PetitaLight !important;
     white-space: normal;
 }
 }
 @media only screen and (max-width: 45em) {
+    .left{
+        grid-column: 2 / 3;
+        justify-self: left;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    .right{
+        grid-column: 2 / 3;
+        justify-self: right;
+        text-align: right;
+        margin-bottom: 10px;
+    }
     .cards{
-    grid-column: 2 / 3;
-    grid-row: 2 / 10;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
     display: flex;
+    flex-direction: column;
     justify-content:center;
     align-content: center;
-    gap: 4%;
     z-index: 2;
 }
     .title{
-    font-family: PetitaMedium !important;
+    font-family: SpaceGrotesk !important;
     white-space: nowrap;
     text-align: left;
     font-style: normal;
-    font-size: 5vw !important;
+    font-size: 24px !important;
 } 
     .backgroundimg{
-    grid-row: 1 / -1;
-    grid-column: 1 / -1;
+    display: none;
     }
     .smallcard{
     height: fit-content;
     background-color: rgba(246,246,246,1) !important;
-    width: 30vw;
-    max-height: 85vw;
     border-radius: 0% !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
     overflow:auto;
+    margin-right: 3%;
+    margin-bottom: 20px;
     }
     .fonttitle{
-        text-align: center;
-        font-size: 2.8vw;
-        font-family: PetitaBold !important;
-        font-weight: 530;
+        font-size: 16px;
+        font-weight: 550;
+        padding: 0;
+        padding-top:2px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .fonttitle2{
+        font-size: 16px;
         padding: 0;
         padding-top:2px;
         padding-left: 5px;
         padding-right: 5px;
     }
     .font{
-        text-align: left;
-        font-size: 2.4vw;
-        font-family: PetitaLight !important;
+        font-size: 14px;
         white-space:normal;
     }
 }
