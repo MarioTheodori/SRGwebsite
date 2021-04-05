@@ -7,30 +7,97 @@
             <div class="marg">
                 <v-card-text class="font topm">SRG Handel und Dienstleistung</v-card-text>
                 <v-card-text class="font botm">
-                                            is an international software services organization,
-                                            providing professional software services to clients globally.<br>
-                                            We serve customers worldwide offering different services
-                                            and solutions with experience in the international market.<br>
-                                            We achieve your goals with our expertise in the
-                                            field with high efficiency and the shortest time possible.
+                    {{text}}
                 </v-card-text>
             </div>
         </v-card>
+        <div class="line1"></div>
+        <div class="line2"></div>
     </div>
 </template>
 
 <script>
 export default {
   name: 'Aboutus',
+  props: {
+      english: {
+          type: Boolean,
+          required: true
+      }
+  },
+  computed: {
+      text: function () {
+          if (this.english) {
+              return`is an international software services organization,
+                    providing professional software services to clients globally.
+                    We serve customers worldwide offering different services
+                    and solutions with experience in the international market.
+                    We achieve your goals with our expertise in the
+                    field with high efficiency and the shortest time possible.`
+          }
+          return`ist eine internationale Software-Service-Organisation,
+                die Kunden weltweit professionelle Software-Services bietet.
+                Wir bedienen Kunden weltweit und bieten verschiedene Dienstleistungen 
+                und Lösungen mit Erfahrung auf dem internationalen Markt.
+                Wir erreichen Ihre Ziele mit unserer Fachkompetenz
+                mit hoher Effizienz und kürzester Zeit.`
+      }
+  }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-@media only screen and (min-width: 45em) { 
+*{
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 1.2rem;
+  text-align: center;
+  color: black !important;
+}
+@media only screen and (min-width: 45em) {
+    
+    /* .lines{
+        grid-column: 1 / -1;
+        grid-row: 1 / -1;
+        z-index: 3;
+        overflow: hidden;
+        height: 100%;
+    } */
+    .line1{
+        /* position: relative;
+        width: 45%;
+        left: 8%;
+        top: 25%; */
+        grid-column: 2 / 5;
+        grid-row: 3 / 6;
+        z-index: 3;
+        height: 5px;
+        background-color: red;
+    }
+    .line2{
+        /* position: relative;
+        left: 8%;
+        top: 25%;
+        height: 90%; */
+        grid-column: 2 / 3;
+        grid-row: 3 / -1;
+        width: 5px;
+        height: 100%;
+        background-color: red;
+        z-index: 3;
+    }
+    /* .line3{
+        grid-column: 1 / 2;
+        grid-row: 10 / 10;
+        width: 104%;
+        height: 5px;
+        background-color: red;
+        z-index: 3;
+    } */
     .topm{
         padding-bottom: 0;
         margin-top: 20px;
+        font-weight: 600 !important;
     }
     .botm{
         padding-top: 0;
@@ -44,15 +111,17 @@ export default {
         grid-column: 1 / 12;
         grid-row: 1 / -1;
         z-index: 0;
+        height: 100%;
+        width: 100%;
     }
     .containers{
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(1fr,12);
-        grid-template-rows:  10% auto 3%;
+        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+        grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
     }
     .font{
-    text-align: left;
+    text-align: justify;
     color: black !important;
     align-self: center;
     font-size: 1.5vw;
@@ -72,8 +141,8 @@ export default {
         background-color: rgba(239,239,239,1) !important;
         justify-items: center;
         align-items: center;
-        grid-row: 2 / 3;
-        grid-column: 7 / 11;
+        grid-row: 2 / 7;
+        grid-column: 4 / 10;
         z-index: 2;
     }
     .cardcont{
@@ -87,6 +156,14 @@ export default {
     }
 }
 @media only screen and (max-width: 45em) {
+    .line1{
+        position: relative;
+        width: 5px;
+        z-index: 1;
+        height: 110%;
+        left: 20px;
+        background-color: red;
+    }
     .hide{
         display: none;
     }
@@ -106,6 +183,7 @@ export default {
     .topm{
         padding-bottom: 0;
         margin-top: 20px;
+        font-weight: 600;
     }
     .botm{
         padding-top: 0;
@@ -129,7 +207,7 @@ export default {
         align-items: center;
         grid-column: 2 / 3;
         grid-row: 2 / 4;
-        z-index: 1;
+        z-index: 2;
     }
     .marg{
         padding: 0vw;

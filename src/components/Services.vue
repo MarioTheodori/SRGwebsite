@@ -1,6 +1,10 @@
 <template>
+<div class="grids">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+    <div class="over"><span class="title">{{title}}</span></div>
     <div class="mainCont my-4">
-        <div class="my-5"><span class="title">SERVICES</span></div>
         <div class="containers ma-0">
             <div class="cards">
                 <v-card class="smallcard" elevation="0"><v-card-text class="font fix1">Customized Software Development</v-card-text>
@@ -53,11 +57,26 @@
             </div>
         </div>
     </div>
+</div>
 </template>
 
 <script>
 export default {
   name: 'Services',
+  props: {
+      english: {
+          type: Boolean,
+          required: true
+      }
+  },
+  computed: {
+      title: function () {
+          if (this.english) {
+              return`Services`
+          }
+          return`Dienstleistungen`
+      }
+  }
 }
 </script>
 
@@ -66,20 +85,34 @@ export default {
 *{
     color: black !important;
 }
-.mainCont{
+.center {
+    align-self: center !important;
+}
+@media only screen and (max-width: 45em) {
+    .grids{
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+    .line1{
+        position: absolute;
+        width: 5px;
+        z-index: 3;
+        height: 100%;
+        left: 20px;
+        background-color: red;
+    }
+    .over{
+        display: grid;
+        margin-top: 10px;
+    }
+    .mainCont{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0%;
     max-height: 550px;
-}
-
-.center {
-    align-self: center !important;
-}
-
-
-@media only screen and (max-width: 45em) {
+    }
     .containers{
     width: 100% !important;
     display: grid;
@@ -102,11 +135,13 @@ export default {
     margin-left: 20px;
     }
     .title{
-    font-family: SpaceGrotesk !important;
+    font-family: 'Space Grotesk', sans-serif !important;
     white-space: nowrap;
     text-align: left;
     font-style: normal;
     font-size: 24px !important;
+    align-self: center;
+    justify-self: center;
     }
     .font{
         text-align: center;
@@ -119,6 +154,7 @@ export default {
     grid-column: 1 / -1;
     background-image: url("../assets/servicesback.png");
     background-size: cover;
+    z-index: 4;
     }
     .smallcard{
     margin-top: 10px;
@@ -131,13 +167,66 @@ export default {
 }
 
 }
-@media only screen and (min-width: 45em) { 
+@media only screen and (min-width: 45em) {
+    .hide{
+        height: 100%;
+        width: 100%;
+    }
+    .over{    
+        grid-column: 5 / 7;
+        grid-row: 1 / 3;
+        z-index: 3;
+        align-self: center;
+        background-color: white;
+        width: fit-content;
+        justify-self: center;
+    }
+    .mainCont{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0%;
+        grid-column: 1 / 11;
+        grid-row: 3 / 11;
+    }
+    .grids{
+        width: 100%;
+        height: fit-content;
+        display: grid;
+        grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+        grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
+    }
+    .line1{
+        grid-column: 2 / 2;
+        grid-row: 1 / 1;
+        z-index: 3;
+        height: 100%;
+        width: 5px;
+        background-color: red;
+    }
+     .line2{
+        grid-column: 2 / 9;
+        grid-row: 2 / 2;
+        width: 100%;
+        height: 5px;
+        background-color: red;
+        z-index: 1;
+    }
+    .line3{
+        grid-column: 8 / 8;
+        grid-row: 2 / -1;
+        width: 5px;
+        height: 100%;
+        background-color: red;
+        justify-self: end;
+        z-index: 1;  
+    }
     .containers{
     width: 100% !important;
+    height: 100%;
     display: grid;
     grid-template-columns: 10% 80% 10%;
-    grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
-
+    grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;
 }
     .cards{
     grid-column: 2 / span 1;
@@ -151,8 +240,8 @@ export default {
     justify-self: center;
     }
     .backgroundimg{
-    grid-row: 2 / 11;
-    grid-column: 2 / span 1;
+    grid-row: 2 / -1;
+    grid-column: 2 / 3;
     }
     .smallcard{
     background-color: rgba(246,246,246,1) !important;
@@ -167,11 +256,15 @@ export default {
     margin-right: 2%;
     }
     .title{
-    font-family: SpaceGrotesk !important;
+    align-self: center;
+    font-family: 'Space Grotesk', sans-serif !important;
     white-space: nowrap;
-    text-align: left;
+    font-weight: 550;
+    text-align: center;
     font-style: normal;
     font-size: 2.5vw !important;
+    margin-left: 3px;
+    margin-right: 3px;
     }
     .font{
         text-align: center;

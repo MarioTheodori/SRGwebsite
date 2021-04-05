@@ -10,8 +10,11 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "emailjs-com": "^2.6.4",
+    "smoothscroll-polyfill": "^0.4.4",
+    "vee-validate": "^3.4.5",
     "vue": "^2.6.11",
-    "vuetify": "^2.2.11"
+    "vuetify": "^2.2.11",
+    "zenscroll": "^4.0.2"
   },
   "devDependencies": {
     "@mdi/font": "^5.8.55",
